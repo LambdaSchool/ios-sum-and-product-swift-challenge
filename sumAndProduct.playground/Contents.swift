@@ -16,18 +16,14 @@ func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
                 result.append(a)
                 result.append(b)
                 break
-            } else {
-                count += 1
             }
-        } else {
-            count += 1
         }
+        count += 1
     }
     
     if result.count <= 1 {
         result = []
     }
-    
     return result
 }
 
