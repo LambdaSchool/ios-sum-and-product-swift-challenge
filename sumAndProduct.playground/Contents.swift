@@ -2,23 +2,21 @@ import UIKit
 
 func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
     var a: UInt = 0
-    var b: UInt = 0
     var result: [UInt] = []
     
     for x in 1...sum {
         if sum % x == 0 {
-            a = x
-            if product % a == 0 {
-                b = product / a
+            if product % x == 0 {
+                a = product / x
             }
-            if a + b == sum {
+            if x + a == sum {
                 result.append(a)
-                result.append(b)
+                result.append(x)
                 break
             }
         }
     }
-    return result
+    return result.sorted()
 }
 
 sumAndProduct(6, 9)
