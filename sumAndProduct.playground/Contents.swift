@@ -1,14 +1,13 @@
 import UIKit
 
 func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
-    var count: UInt = 1
     var a: UInt = 0
     var b: UInt = 0
     var result: [UInt] = []
     
-    for _ in 1...sum {
-        if sum % count == 0 {
-            a = count
+    for x in 1...sum {
+        if sum % x == 0 {
+            a = x
             if product % a == 0 {
                 b = product / a
             }
@@ -18,13 +17,8 @@ func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
                 break
             }
         }
-        count += 1
-    }
-    
-    if result.count <= 1 {
-        result = []
     }
     return result
 }
 
-sumAndProduct(8, 12)
+sumAndProduct(6, 9)
