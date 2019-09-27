@@ -8,15 +8,15 @@ func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
         if sum % x == 0 {
             if product % x == 0 {
                 a = product / x
-            }
-            if x + a == sum {
-                result.append(a)
-                result.append(x)
-                break
+                if x + a == sum {
+                    result.append(a)
+                    result.append(x)
+                    break
+                }
             }
         }
     }
     return result.sorted()
 }
 
-sumAndProduct(6, 9)
+sumAndProduct(5, 225)
