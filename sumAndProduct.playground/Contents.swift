@@ -6,14 +6,14 @@ func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
     
     var numArray: [UInt] = []
     
-    if (x + y) != sum && (x * y) != product {
+    while x + y != sum && x * y != product {
         x += 1;
         y += 1
-    } else {
-        numArray.append(x);
-        numArray.append(y)
     }
     
+    numArray.append(x);
+    numArray.append(y)
+
     return numArray
 }
 
