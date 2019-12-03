@@ -9,22 +9,24 @@ import UIKit
 /*Here are the overall [instructions for code challenges](https://github.com/LambdaSchool/ios-code-challenge-instructions). Before you begin, fork and clone this repo and work through your solution in the included starter playground file. When you're done, **Please make sure to save and push all your work, and submit a Pull Request. Don't forget tag your TL so they can review your submission!**/
 
 func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
-    
+    // returns early if sum or product is zero
     if sum == 0 || product == 0{
         return [0, sum > product ? sum: product]
     }
-    var x: UInt = 0
-    var y: UInt = 0
+    var operand1: UInt = 0
+    var operand2: UInt = 0
+    // looking for sum and product operands iteratively
     for n in 0...sum{
-        for m in 0...product{
+        for m in 0...product / n{ //dividing product by n reduces iterations
             if n + m == sum{
                 if n * m == product{
-                    x = n
-                    y = m
+                    operand1 = n
+                    operand2 = m
                 }
             }
         }
     }
-    return x == 0 && y == 0 ? [] : x < y ? [x, y] : [y, x]
+    // checks if empty array should be return or returns manually sorted array of operands
+    return operand1 == 0 && operand2 == 0 ? [] : operand1 < operand2 ? [operand1, operand2] : [operand2, operand1]
 }
 sumAndProduct(45232322, 2323245)
