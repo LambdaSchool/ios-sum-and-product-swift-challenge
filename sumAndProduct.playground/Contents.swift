@@ -30,8 +30,8 @@ func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
             break
         }
     }
-    // checks if empty array should be return or returns manually sorted array of operands
+    // checks if empty array should be returned or returns manually sorted array of operands
     return operand1 == 0 && operand2 == 0 ? [] : operand1 < operand2 ? [operand1, operand2] : [operand2, operand1]
 }
 sumAndProduct(6, 9)
-sumAndProduct(4, 12)
+sumAndProduct(15, 36)
