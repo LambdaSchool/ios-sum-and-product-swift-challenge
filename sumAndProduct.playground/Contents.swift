@@ -1,23 +1,24 @@
 import UIKit
 
 func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
-    var x: UInt = 1
+    var x: UInt = 1 // must be variable not constant
     var y: UInt = 1
     
     var numberArray: [UInt] = []
     
     for x in 1...product {
         if x + y == sum && x * y == product {
-            numberArray.append(y)
+            numberArray.append(x)
             numberArray.append(y)
         }
-        y += 1
+//        x += 1 - cannot x in loop already
+          y += 1
     }
     return numberArray
 }
 sumAndProduct(6, 9)
-sumAndProduct(12, 15)
-
+sumAndProduct(12, 15) // no solution
+sumAndProduct(2, 8) // no solution
 
 
 
