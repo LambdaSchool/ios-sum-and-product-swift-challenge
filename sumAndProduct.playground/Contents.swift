@@ -11,7 +11,7 @@ import UIKit
 func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
     
     if sum == 0 || product == 0{
-        return [0, sum < product ? sum: product]
+        return [0, sum > product ? sum: product]
     }
     var x: UInt!
     var y: UInt!
@@ -27,4 +27,4 @@ func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
     }
     return x < y ? [x, y] : [y, x]
 }
-sumAndProduct(6, 9)
+sumAndProduct(0, 5)
