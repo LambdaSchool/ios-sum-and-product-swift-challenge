@@ -10,7 +10,7 @@ import UIKit
 
 func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
     // returns early if sum or product is zero
-    guard sum == 0 || product == 0  else { return [0, sum > product ? sum: product] }
+    guard sum > 0 || product > 0  else { return [0, sum > product ? sum: product] }
     var operand1: UInt = 0
     var operand2: UInt = 0
     // looking for sum and product operands iteratively
@@ -24,13 +24,14 @@ func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
                         operand2 = m
                     }
                 }
-                else{
-                    break
-                }
             }
         }
+//        else{
+//            break
+//        }
     }
     // checks if empty array should be return or returns manually sorted array of operands
     return operand1 == 0 && operand2 == 0 ? [] : operand1 < operand2 ? [operand1, operand2] : [operand2, operand1]
 }
 sumAndProduct(6, 9)
+sumAndProduct(4, 12)
