@@ -13,8 +13,8 @@ func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
     if sum == 0 || product == 0{
         return [0, sum > product ? sum: product]
     }
-    var x: UInt!
-    var y: UInt!
+    var x: UInt = 0
+    var y: UInt = 0
     for n in 0...sum{
         for m in 0...product{
             if n + m == sum{
@@ -25,6 +25,6 @@ func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
             }
         }
     }
-    return x < y ? [x, y] : [y, x]
+    return x == 0 && y == 0 ? [] : x < y ? [x, y] : [y, x]
 }
-sumAndProduct(0, 5)
+sumAndProduct(45232322, 2323245)
