@@ -17,7 +17,7 @@ func sumAndProduct(_ sum: UInt, _ product: UInt) -> [UInt] {
     for n in 1...sum{
         if (n <= product / n)
         {
-            for m in 1...product / n{ //dividing product by n reduces iterations
+            for m in n...product / n{ //dividing product by n reduces iterations
                 if n + m == sum{
                     if n * m == product{
                         operand1 = n
